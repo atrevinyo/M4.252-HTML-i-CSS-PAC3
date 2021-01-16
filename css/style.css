@@ -1,0 +1,672 @@
+/*Imortem les fonts de Gogle fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+
+/* Definim el format genèric del contingur principal de les pàgines */
+body {
+    margin: 0; /** Per eliminar el margin de 8px que hi ha per defecta el body**/
+    font-family: 'Noto Serif', sans-serif;  /*Font general*/
+    font-weight: 400;
+    font-size: 14px;
+    color: #1c1c1c;
+	line-height: 1.5em;
+    background-color: #e8e8e8;
+    max-width: 100%;  /*Defimim l'amplada màxima. Per a qque les elements no surtin de la pantalla i no mostri la barra de desplaçament*/
+}
+
+main {
+    width: 60%; /*Fem que tot el contingut ocupi el 60% de tota la pantalla*/
+    margin: auto; /*centrem el contingut*/
+}
+
+/* Mida dels títols principals */
+h1 {
+    font-size: 24px;
+}
+
+/* HEADER */
+/*format general dels enllaços*/
+a {
+    text-decoration: none;
+    color: #1c1c1c;
+}
+
+
+/* Definim la font Open Sans a la capcelera, peu, formulari */
+header, footer, form, input {
+    font-family: 'Open Sans';
+}
+
+/*
+Aliniem en una una fila i veticalment els elements de la capcelera:
+- Logo
+- Menú
+- Boto
+*/
+header  {
+    /* max-width: 100%; */
+    padding: 1rem;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 700;
+
+}
+
+img {
+    max-width: 100%; /*Ajustem les imatges a la mida del contenidor*/
+}
+
+/*Format general del menús*/
+nav ul, nav li {
+	margin: 0;
+	padding: 0;
+    list-style: none;
+    display: inline;
+}
+
+
+/* Separació entre els elemnets  del menú de la capcelera*/
+header nav li {
+	margin-right: 25px;
+}
+
+
+/*
+Aliniem verticalment el text del logo */
+header > a {
+   display: flex;
+   align-items:center;
+}
+
+/* format del text "oscars" del logo */
+#blacktextlogo {
+    margin-left: 10px;
+    font-weight: 700;
+    font-family: 'Noto Serif', sans-serif;
+    font-size: 24px;
+}
+
+/* format del text "club" del logo */
+#redtextlogo {
+    color: #9b1700;
+    font-family: 'Noto Serif', sans-serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 24px;
+}
+
+/*Format del menú actiu*/
+.menu-actiu  {
+    font-style: italic;
+    opacity: 0.5;
+}
+
+
+/*Hover del menu:  el mateix color que en els enllaços amb alfa de 0.5*/
+header nav a:hover {
+	color: rgba(28, 28, 28, 0.5);
+}
+
+
+/* Donem forma de boto als enllaços de la pàgina Index*/
+.enllaç-boto {
+    color: white;
+    font-weight: 400;
+    background-color: #9b1700;
+    padding: 7px 10px;
+	border-radius: 4px;
+	color: white;
+	border: 0;
+}
+
+
+
+
+/* FOOTER */
+
+/* Definim el footer
+- Per ubicar els 4 blocs del footer utilitzem un grid de dues columnes i tres files
+*/
+#footer {
+    padding: 3rem 1rem 0rem 1rem;
+    background-color: #433A44;
+    color: #FFFFFF;
+    font-size: 12px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 0.5fr;
+    grid-template-areas: "a b"
+                         "c d"
+                         "e f";
+    /* Espai entre les files del grid. Per separar */
+    /* row-gap: 1rem; */
+}
+
+#nav-sobrenosaltres {
+    grid-area: a;
+}
+
+#nav-social {
+    grid-area: b;
+}
+
+#subfooter {
+    grid-area: c;
+}
+
+#peu-a-capcelera {
+    grid-area: f;
+    font-size: 30px;
+    margin: 0px;
+    align-self: flex-start;
+    text-align: right;
+}
+
+
+/* Aliniem a la dreta el menú de les xarxes socials */
+#nav-social {
+    justify-self: end;
+}
+
+
+/* Color dels enllaços del footer */
+footer a {
+    color: #FFFFFF;
+}
+
+/* Definim element separador (·)  entre els elements dels menus del peu de pàgina*/
+footer li:not(:first-child)::before{
+    content: '·';
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+    font-size: 20px;
+}
+
+
+/* Definim color dels enllaços del peu de pàgina */
+footer a:hover {
+	color:#9b1700;
+}
+
+/*
+Definim una mida de lletra de 10px  */
+#subfooter {
+    font-size: 10px;
+    line-height: 8px;
+}
+
+
+/* INDEX.HTLM */
+
+/* Definim mida de la font per a tot el text contingut
+dins de els etiquetes small */
+form small {
+    font-size: 10px;
+}
+
+/* Definim interliniat del text "Protecció de dades" */
+form p   {
+    width: 100%;
+    line-height: 15px;
+}
+
+/* Color dels enllaços del text "Protecció de dades"  */
+form small a {
+    color: #9b1700;
+}
+
+.main-index {
+    /* centrem tot el contingut principal */
+    text-align: center;
+    margin-top: 3rem;
+    margin-bottom: 5rem;
+}
+
+/* Separem una mica les seccions  */
+#seccio1-container, #seccio2-container {
+    margin-bottom: 3rem;
+}
+
+/*Utilitzem flex box per ubicar les quatre icones d'aquest secció  */
+.contenidor-comfunciona {
+    display: flex;
+    justify-content: space-between;
+    /* margin: 0px; */
+}
+
+/* Eliminem marge superior de les icones per a que quedin més engantxades al títol*/
+.contenidor-icon-comfunciona {
+    margin: 0px 2rem;
+}
+
+/* Marge entre el títol de la secció i el paràgraf */
+section h1 {
+    margin-bottom: 1.5rem;
+}
+
+/* Format dels camp de texte del formulari */
+input[type=text] {
+    display: block;
+    height: 2rem;
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+/* Domen format al checkbox del formulari */
+form label {
+    display: block;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+input[type=checkbox] {
+    margin-left: 0px;
+}
+
+/* Utilitzem flex per ubicar els dos elments de la secció Uneix-te */
+#contenidor-uneixte {
+    display: flex;
+}
+
+.uneix-te-al-club {
+    flex: 1; /* fem que el eslogan ocupi la meitat del contenidor flex*/
+}
+
+#contenidor-uneixte form {
+    flex: 1; /* fem que el formulari ocupa la meitat del contenidor flex*/
+    text-align: left;
+}
+
+/*Definim format pel text de la secció Uneix-te al club */
+.uneix-te-al-club p {
+    text-align: left;
+    font-size: 20px;
+    line-height: 1.8rem;
+    margin-top: 0px;
+    margin-bottom: 2px;
+}
+
+
+/* FI INDEX.HTLM */
+
+
+
+
+/* CLUB TEMATICS */
+
+/* Contenidor de tot el contingu */
+#club-container {
+    /* marge entre el footer */
+    margin-bottom: 3rem;
+}
+
+/* Format del títol */
+#club-container h1 {
+    text-align: center;
+    margin: 2rem;
+}
+
+/* Contenidor de totes les targetes */
+.cards-club {
+    margin: auto;  /*centrem el contenidor*/
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    row-gap: 2rem; /* Marge entre files*/
+
+}
+
+/* Contenidor d'una targeta */
+.card-club {
+    font-weight: 400;
+    flex-basis: calc(33.3% - 0.5rem); /*cada tarjeta ocupa 1/3 del contenidor. Deixem 0.5rem de marge  */
+}
+
+
+.card-club h3::before, .grid-container h4::before{
+    color: #9b1700;
+    margin-right: 0.8rem;
+    content: '····';
+}
+
+.footer-card-club a {
+    color:#9b1700;
+}
+/* FI CLUB TEMATICS */
+
+
+/* SESSION 2020*/
+
+
+/*Tot el contingut de la pàgina Sessions 2020*/
+.sessions-main-container {
+    margin: auto;  /*el centrem al contenidor*/
+     /*Fem que ocupi una amaplada del 70% respecte tota la pàgina*/
+    /* width: 70vW; */
+}
+
+/*El contingut de la secció on hi ha el títol i la introducció*/
+#sessions-seccio1 {
+    /* Fem que el texte ocupi una amaplada del 50% respecte tota la pàgina */
+    width: 50vW;
+    /* display: flex;
+    flex-direction: column; */
+    margin: auto;
+}
+
+/* Centrem el títol de la pàgina
+i deixem una mica de marge per a dalt i per abaix */
+#sessions-seccio1 h1 {
+    text-align: center;
+    margin: 3rem 0rem 2rem 0rem;
+}
+
+
+/* Contenidor de tota la pàgina */
+.grid-container {
+    display: flex;
+    border-top: dotted 3px #9b1700;
+    margin-top: 2rem;
+    padding-top: 1rem;
+}
+
+/* Menú de l'esquerra */
+.menu-left {
+    /* La columna on està el menú ocupa la meitat que la columna on es mostren les pel·licules */
+    flex: 1;
+}
+
+/* contenidor de totes les pel·licules */
+.sessions-container {
+    order: 1;
+    /* La columna on estan les pel·licules  ocupael doble que la columna on es mostra el menú*/
+    flex: 2;
+}
+
+/* Contenidor d'una sessió. Cada  sessió te titol i un contenidor de  tres pel·licules */
+.sessio {
+    display: flex;
+    flex-flow: column;
+    /*  Marge entre files */
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+}
+
+/* Contenidor de les tres pel·licules de cada sessió*/
+.films-sessio {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+}
+
+
+/* Una pel·licula de la sessió. Conté la imatge i el titol de la pel·licula */
+.sessio-film {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0px;
+    flex-basis: calc(33.3% - 0.5rem); /* Cada pel·licula ocupa 1/3 de l'espai*/
+    background-color: white;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2); /*Definim una hombra */
+
+  }
+
+  /* Definim format dels titulars de la pàgina de sessions */
+  .sessio h4 {
+      font-family: "Open Sans";
+     margin-bottom: 0.5rem;
+     margin-left: -1rem; /*Per desplaçat el títol de la categoria una mica cap a l'esquerra (tal com està al mockup)*/
+  }
+
+/* Imatges de les pel·licules */
+  .gallery__img {
+    max-width: 100%;
+    height: auto;
+    opacity: 0.5 /*modifiquem la transparencia de les imatges*/
+}
+
+/* Format dels titols de les pelicules */
+.titol-sessio {
+    margin: 0px 0px 5px 5px;
+    color: #9b1700;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* format del títol del menú de l'esqueerra */
+.menu-left h3 {
+    margin: 0px 0px 10px 0px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+h4 {
+    /* margin: 0px; */
+}
+
+
+
+/* Definim format del menú Sessions per Club  */
+.menu-left ul li {
+    font-size: 12px;
+    display: block;
+    text-transform: uppercase;
+    font-family: "Open Sans";
+}
+
+/* FI SESIONS 2020*/
+
+
+/* DETALL SESSIO */
+
+/* Font negreta als títols de la llista descriptiva */
+dt {
+    font-weight: 700;
+    border-bottom: solid 1px black;
+    margin-TOP: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Definim font "Open Sans" i una mica de marge superior i inferior
+al menú fil d'Ariadna */
+.contenidor-fil-ariadna {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    font-family: "Open Sans";
+}
+
+/* Fiquem la barra separadora als items (al primer element no) del fil d'ariadna  */
+.fil-ariadna li:not(:first-child)::before{
+    margin-right: 0.4rem;
+    margin-left: 0.4rem;
+    content: '/';
+}
+
+/* enllaç fil d'ariadna opacitat 0.5*/
+.fil-ariadna li:last-child {
+    /* color: grey; */
+    opacity: 0.5;
+}
+
+/*Contenidor princiapl*/
+.contenidor-detalls {
+    display: flex;
+    flex-flow: row wrap;
+    margin: auto;
+    column-gap: 2rem;
+    margin-bottom: 3rem; /*Una mica de marge a la part inferior. Per separar-lo del peu de la pàgina */
+}
+
+.contenidor-detalls aside {
+    font-size: 13px;
+    flex: 1.5; /*Definim mida de a part esquerra on hi ha la llista */
+}
+
+.contenidor-detalls div {
+    text-align: justify;
+    flex: 2; /*Definim mida de a part dreta on hi ha el text */
+}
+
+
+/* Eliminem el marge superior del paràgraf que acompanya la imatge.
+D'aquesta manera, el texte i la imatge queden alineades */
+.img-texte p {
+    margin-top: 0px;
+}
+
+/*
+- Aliniem la imatge a l'esquerra del texte
+- Li definim un tamany fixe de 151px
+- L'arrodonim */
+.img-rodona {
+    float: left;
+    width: 110px;
+    border-radius: 50%;
+}
+
+/*  */
+.img-texte {
+    overflow: auto;
+}
+
+/* Definim la mida del vídeo */
+iframe {
+    width: 100%;
+    height: 30vH;
+}
+
+/* Definim format del texte del peu del vídeo */
+.contenidor-detalls footer {
+    text-transform: uppercase;
+    font-family: "Noto Serif";
+    font-size: 12px;
+}
+
+
+/* FI DETALL SESSIO */
+
+
+
+/*CSS aplicat a les resolucions inferiors a 480px*/
+
+@media (max-width: 480px) {
+
+    main {
+        width: 90%; /*Fem que tot el contingut ocupi el 90% de tota la pantalla*/
+    }
+
+    /*Mofifiquem la mida dels títols*/
+    h1 {
+        font-size: 20px;
+    }
+
+    /* mida del text de les categories de la pàgina sessions 2020*/
+    h3 {
+        font-size: 16px;
+    }
+
+
+    /*Canviem la disposició dels elements del peu de pàgina.
+    Els mostrem en una sola columna  */
+    #footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 1rem; /* Marge entre files */
+
+    }
+
+    /* Eliminem marge superior de les icones per a que quedin més engantxades al títol*/
+    .contenidor-icon-comfunciona {
+    margin: 0px 5rem; /* Fem les icones una mica més petites*/
+    }
+
+
+    #peu-a-capcelera {
+        /* Aliniem l'element ^ a la dreta i deixem una mica de marge*/
+        align-self: flex-end;
+        margin: 1rem;
+        margin-top: -1rem; /*Per a que ^ quedi més engantxat adalt*/
+    }
+
+    /* Eliminem el · que separa els elements dels menus del peu de pàgina */
+    footer li:not(:first-child)::before{
+        content: none;
+    }
+
+    /* Centrem els menú xarxes socials del peu de pàgina  */
+    #nav-social {
+        justify-self: center;
+    }
+
+    /* Mostrem els menus en block  i centrats */
+    header nav li, footer nav li {
+        display: block;
+        margin-right: 15px;
+        text-align: center;
+    }
+
+    /*Aliniem els text del peu de pàgina al centre*/
+    #subfooter {
+        text-align: center;
+    }
+
+    /*Tots els elements del header els disposem en una sola columna */
+    header {
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 15px; /* Definim una mica de eparació entre els elements de la capçalera */
+
+    }
+
+    /* El botó d'inici de sessió el fiquem com a primer element*/
+    header .enllaç-boto {
+        order: -1;
+    }
+
+    /*tot e lcontingut ubicat en flexboxs el mostrem en una sola columna  */
+    .contenidor-comfunciona, #contenidor-uneixte, .contenidor-detalls, .cards-club, .grid-container {
+        /* flex-direction: column; */
+        flex-flow: column wrap;
+        align-items: center;
+
+        row-gap: 1rem;
+    }
+
+    /* Eliminem la línia vermella de punts de la pàgina sessions 2020 */
+    .grid-container {
+        border-top: 0;
+
+    }
+
+    /* Per a que la columna que conté les imatges de sessions 2020 ocupe el 60%  de la pantalla*/
+    .sessions-container {
+        max-width: 60%;
+    }
+
+    .films-sessio {
+        flex-flow: column; /*Mostrem totes les imatges de les pel·licules en una columna*/
+        row-gap: 1rem; /* Espai entre les files (imatges de les pel·licules) */
+    }
+
+    .sessio h4 {
+        margin-left: -4rem; /*Per desplaçat el títol de la categoria una mica cap a l'esquerra (tal com està al mockup)*/
+     }
+
+    #sessions-seccio1 {
+        /*Fem que el contingut de la secció on hi ha el títol i la introducció ocupi gairebé tota l'amplada*/
+        width: 95%;
+    }
+
+    /* per a que el menu de la pàgina sesions 2020 es mostri a l'esquerra */
+    .menu-left {
+        align-self: flex-start;
+        margin-left: 0.5rem;
+    }
+
+
+}
+
